@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import logo from './logo-clickplayers.png';
 import './App.css';
+import Products from './components/Products';
+//habría que conseguir que los props sean de la api
+
+
+let products = document.getElementById('products')
+    fetch('http://localhost:4000/api/products')
+
+    .then (products => products.json())
+    .then (json => products = json.data)
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+         <div className="App-basic">
+          <Products />
+         </div>
       </header>
+      <div className="App-basic">
+          
+      </div>
     </div>
   );
 }
